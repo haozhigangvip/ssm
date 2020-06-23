@@ -122,13 +122,6 @@
             <version>1.3.0</version>
         </dependency>
         <dependency>
-            <groupId>c3p0</groupId>
-            <artifactId>c3p0</artifactId>
-            <version>0.9.1.2</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
             <version>5.1.2</version>
@@ -165,6 +158,11 @@
         	<artifactId>mssql-jdbc</artifactId>
         	<version>8.2.0.jre8</version>
         </dependency>
+        <dependency>
+        	<groupId>com.mchange</groupId>
+        	<artifactId>c3p0</artifactId>
+        	<version>0.9.5.2</version>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -189,5 +187,6 @@
   	<module>ssm_domain</module>
   	<module>ssm_utils</module>
     <module>ssm_web</module>
+    
   </modules>
 </project>

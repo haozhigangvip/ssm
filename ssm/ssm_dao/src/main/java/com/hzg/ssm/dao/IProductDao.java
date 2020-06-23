@@ -3,16 +3,18 @@ package com.hzg.ssm.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import com.hzg.ssm.domain.Product;
 
 /**
- * Íê³ÉProduct³Ö¾Ã»¯²Ù×÷
+ * ï¿½ï¿½ï¿½Productï¿½Ö¾Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author Administrator
  *
  */
 
-//²éÑ¯ËùÓÐ²úÆ·ÐÅÏ¢
+//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ð²ï¿½Æ·ï¿½ï¿½Ï¢
+@Repository
 public interface IProductDao {
 	@Select("select * from product")
 	public List<Product> findAll() throws Exception;

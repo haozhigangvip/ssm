@@ -17,7 +17,7 @@ public class ProductController {
 	@Autowired
 	private IProductService productService;
 	
-	@RequestMapping("/findAll.do")
+	@RequestMapping("/findAll")
 	public ModelAndView findAll() throws Exception{
 		
 		 List<Product> ps=productService.findAll();

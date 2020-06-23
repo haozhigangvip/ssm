@@ -4,22 +4,23 @@ import java.util.Date;
 
 import org.springframework.stereotype.Repository;
 
+import com.hzg.ssm.utils.DateUtils;
+
 /**
- * ÉÌÆ·ĞÅÏ¢
+ * ï¿½ï¿½Æ·ï¿½ï¿½Ï¢
  * @author Administrator
  *
  */
-@Repository
 public class Product {
-	private String id; // Ö÷¼ü
-	private String productNum; // ±àºÅ Î¨Ò» 
-	private String productName; // Ãû³Æ 
-	private String cityName; // ³ö·¢³ÇÊĞ
-	private Date departureTime; // ³ö·¢Ê±¼ä 
+	private String id; // ï¿½ï¿½ï¿½ï¿½
+	private String productNum; // ï¿½ï¿½ï¿½ Î¨Ò» 
+	private String productName; // ï¿½ï¿½ï¿½ï¿½ 
+	private String cityName; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private Date departureTime; // ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ 
 	private String departureTimeStr; 
-	private double productPrice; // ²úÆ·¼Û¸ñ
-	private String productDesc; // ²úÆ·ÃèÊö 
-	private Integer productStatus; // ×´Ì¬ 0 ¹Ø±Õ 1 ¿ªÆô 
+	private double productPrice; // ï¿½ï¿½Æ·ï¿½Û¸ï¿½
+	private String productDesc; // ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ 
+	private Integer productStatus; // ×´Ì¬ 0 ï¿½Ø±ï¿½ 1 ï¿½ï¿½ï¿½ï¿½ 
 	private String productStatusStr;
 	public String getId() {
 		return id;
@@ -52,6 +53,9 @@ public class Product {
 		this.departureTime = departureTime;
 	}
 	public String getDepartureTimeStr() {
+		if(departureTime!=null){
+			departureTimeStr=DateUtils.date2String(departureTime, "yyyy-MM-dd HH:mm:ss");
+		}
 		return departureTimeStr;
 	}
 	public void setDepartureTimeStr(String departureTimeStr) {
@@ -76,6 +80,14 @@ public class Product {
 		this.productStatus = productStatus;
 	}
 	public String getProductStatusStr() {
+		if(productStatus!=null){
+			if(productStatus==0){
+				productStatusStr="å…³é—­";
+			}
+			if(productStatus==1){
+				productStatusStr="å¼€å¯";
+			}
+		}
 		return productStatusStr;
 	}
 	public void setProductStatusStr(String productStatusStr) {
